@@ -1,4 +1,6 @@
-﻿namespace Care.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Care.Models
 {
     public class Medecine
     {
@@ -6,8 +8,12 @@
 
         //for keeping required constrains we will user data antonations
 
-        public string BatchId { get; set; }
+        [Key]
+        public string? BatchId { get; set; }
+
+        [Required]
         public string MedName { get; set; }
+
         public string Quantity { get; set;}
         public string Price { get; set; }
         public DateOnly Expire { get; set;}
