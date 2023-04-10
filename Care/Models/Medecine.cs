@@ -12,10 +12,12 @@ namespace Care.Models
         public string? BatchId { get; set; }
 
         [Required]
-        public string MedName { get; set; }
-
-        public string Quantity { get; set;}
-        public string Price { get; set; }
-        public DateOnly Expire { get; set;}
+        public string? MedName { get; set; }
+        [Required]
+        public string? Quantity { get; set; }
+        [Required]
+        public string? Price { get; set; }
+        [Required]
+        public DateTime? Expire { get; set;}
     }
 }

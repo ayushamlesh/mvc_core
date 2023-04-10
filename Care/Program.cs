@@ -1,3 +1,6 @@
+using Care.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Care
 {
     public class Program
@@ -8,6 +11,14 @@ namespace Care
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //informing the application to use DbContext to connect and create a dayabase and table
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection")
+                ));
+            //it will go to applicationdbcontect class then it will provide options that will be sent to the base class
+            //the methodin line 17 will let the app know to find the connection string having name "DefaultConnection"
+
 
             var app = builder.Build();
 
