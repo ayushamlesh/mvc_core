@@ -29,6 +29,22 @@ namespace Care.Controllers
             //4. we will pass the value into the view and @view reterive using foreach LOOP.
             return View(objCatList);
         }
+
+        public IActionResult Create()
+        {
+ 
+            return View();
+        }
+
+        //postmethod
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Category obj)
+        {
+            _context.Categories.Add(obj);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
 
