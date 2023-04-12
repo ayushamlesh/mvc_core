@@ -19,6 +19,7 @@ namespace Care
             //it will go to applicationdbcontect class then it will provide options that will be sent to the base class
             //the methodin line 17 will let the app know to find the connection string having name "DefaultConnection"
 
+  
 
             var app = builder.Build();
 

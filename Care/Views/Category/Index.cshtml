@@ -5,10 +5,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index Catagory</h1>
+@*we are capturing the data passed from controller*@
+<div class="container p-3"> 
+    @*parts are devided into 12 sections*@
+    <div class="row pt-4"> 
+        @*compining 6 in this and another 6 below*@
+        <div class="col-6"> 
+            <h2>Category List</h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                Create New Category
+            </a>
+        </div>
+    </div>
 
-@*
-we are capturing the data passed from controller*@
+
 <table class="table table-bordered table-striped" style="width:100%">
      <thread>
          <tr>
@@ -32,3 +44,4 @@ we are capturing the data passed from controller*@
     </tbody>
 </table>
 
+</div>
