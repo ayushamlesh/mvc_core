@@ -8,23 +8,33 @@
             <hr/>
         </div>
 
+        @*creating serverside validation*@
+        <div asp-validation-summary="All"></div>
+
         <div class="mb-3">
             @*using asp helper tags to use property from model 'asp-for="CatName" '*@
             <label >Category Id</label>
             <input asp-for="CatId" class="form-control" />
+            <span asp-validation-for="CatId" class="text-danger"/>
         </div>
         <div class="mb-3">
             <label>Category Name</label>
             <input asp-for="CatName" class="form-control" />
+            <span asp-validation-for="CatName" class="text-danger" />
+
         </div>
         <div class="mb-3">
             <lable>Quantity</lable>
             <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity" class="text-danger" />
+
         </div>
         <div class="mb-3">
             @*using asp helper tags to use property from model 'asp-for="CatName" '*@
             <label>Price</label>
             <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger" />
+
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
         <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">

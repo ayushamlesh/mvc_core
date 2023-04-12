@@ -41,9 +41,14 @@ namespace Care.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            _context.Categories.Add(obj);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            //check validation
+            if (ModelState.IsValid)
+            {
+                _context.Categories.Add(obj);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
