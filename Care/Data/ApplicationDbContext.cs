@@ -14,6 +14,6 @@ namespace Care.Data
 
         //create dbset crate tabe with columns present in property
 
-        public DbSet<Medecine> Medecines { get; set; }
+        public DbSet<Models.Category> Categories { get; set; }
     }
 }

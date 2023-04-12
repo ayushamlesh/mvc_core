@@ -2,22 +2,21 @@
 
 namespace Care.Models
 {
-    public class Medecine
+    public class Category
     {
         //here we will write the property of our table columns here
 
         //for keeping required constrains we will user data antonations
 
         [Key]
-        public string? BatchId { get; set; }
+        public string? CatId { get; set; }
 
         [Required]
-        public string? MedName { get; set; }
+        public string? CatName { get; set; }
         [Required]
         public string? Quantity { get; set; }
         [Required]
         public string? Price { get; set; }
-        [Required]
-        public DateTime? Expire { get; set;}
+ 
     }
 }

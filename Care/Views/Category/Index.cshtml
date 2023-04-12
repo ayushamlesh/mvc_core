@@ -1,0 +1,34 @@
+﻿@*it will let the view know what is receiverd is the type of IEnmurable.*@
+@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index Catagory</h1>
+
+@*
+we are capturing the data passed from controller*@
+<table class="table table-bordered table-striped" style="width:100%">
+     <thread>
+         <tr>
+            <th>BatchId</th>
+            <th>Medecine Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          
+     </thread>
+     
+     <tbody>
+    @foreach(var items in Model)
+        {
+            <tr>
+                <td width="20%">@items.CatId</td>
+                <td width="30%">@items.CatName</td>
+                <td width="20%">@items.Quantity</td>
+                <td width="30%">@items.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
