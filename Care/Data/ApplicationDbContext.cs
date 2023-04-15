@@ -14,7 +14,24 @@ namespace Care.Data
 
         //create dbset crate tabe with columns present in property
 
-        public DbSet<Models.Category> Categories { get; set; }
-        
+        public DbSet<Category> Categories { get; set; }
+
+
+
+        //seeding data to the database
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+
+                new Category
+                {
+                    CatId = "11",
+                    CatName = "k",
+                    Price = 100,
+                    Quantity = 10
+                }
+                );
+        }
+
     }
 }

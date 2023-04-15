@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\Care.bundle.scp.css"
     },
     {
-      "Id": "E:\\capgemini\\training\\CareForAll\\Care\\wwwroot\\css\\BootswatchTheme.css",
-      "PackagePath": "staticwebassets\\css\\BootswatchTheme.css"
-    },
-    {
       "Id": "E:\\capgemini\\training\\CareForAll\\Care\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

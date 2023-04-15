@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Care.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230410081734_AddMedecineToDatabase")]
-    partial class AddMedecineToDatabase
+    [Migration("20230415115715_SeedingDAta")]
+    partial class SeedingDAta
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,30 +25,35 @@ namespace Care.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Care.Models.Medecine", b =>
+            modelBuilder.Entity("Care.Models.Category", b =>
                 {
-                    b.Property<string>("BatchId")
+                    b.Property<string>("CatId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("Expire")
-                        .IsRequired()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("MedName")
+                    b.Property<string>("CatName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Price")
+                    b.Property<int?>("Price")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Quantity")
+                    b.Property<int?>("Quantity")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
-                    b.HasKey("BatchId");
+                    b.HasKey("CatId");
 
-                    b.ToTable("Medecines");
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CatId = "11",
+                            CatName = "k",
+                            Price = 100,
+                            Quantity = 10
+                        });
                 });
 #pragma warning restore 612, 618
         }

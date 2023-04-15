@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8HNTc46kicMTsrZ3vxE9mgyYBuqfkvFNOs0Zp88lryA=",
+  "Hash": "HxWDBkIgQVfDz6tCh98mVa0oGGpQ1YE/s5wVgR6DCyc=",
   "Source": "Care",
   "BasePath": "_content/Care",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\capgemini\\training\\CareForAll\\Care\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Care.bundle.scp.css"
-    },
-    {
-      "Identity": "E:\\capgemini\\training\\CareForAll\\Care\\wwwroot\\css\\BootswatchTheme.css",
-      "SourceId": "Care",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\capgemini\\training\\CareForAll\\Care\\wwwroot\\",
-      "BasePath": "_content/Care",
-      "RelativePath": "css/BootswatchTheme.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\BootswatchTheme.css"
     },
     {
       "Identity": "E:\\capgemini\\training\\CareForAll\\Care\\wwwroot\\css\\site.css",

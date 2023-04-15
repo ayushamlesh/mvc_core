@@ -14,9 +14,9 @@ namespace Care.Models
         [Required]
         public string? CatName { get; set; }
         [Required]
-        public string? Quantity { get; set; }
+        public int? Quantity { get; set; }
         [Required]
-        public string? Price { get; set; }
+        public int? Price { get; set; }
  
     }
 }
