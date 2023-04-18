@@ -80,7 +80,7 @@ namespace Care.Controllers
             //check validation
             if (ModelState.IsValid)
             {
-                _context.Categories.Add(obj);
+                _context.Categories.Update(obj);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
