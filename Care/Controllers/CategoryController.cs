@@ -60,11 +60,14 @@ namespace Care.Controllers
                 return NotFound();
             }
             var category = _context.Categories.Find(id);
+            //another method
+           // var category = _context.Categories.FirstORDefault(u=>u.Id==id);
+
             if (category == null)
             {
                 return NotFound();
             }
-            return View();
+            return View(category);
         }
 
         //postmethod
