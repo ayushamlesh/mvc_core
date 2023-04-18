@@ -87,6 +87,40 @@ namespace Care.Controllers
             return View();
         }
 
+
+       public IActionResult Delete(int? id)
+        {
+            //RETRIEVE THE CATAGORY USING ID
+            if(id== null || id==0)
+            {
+                return NotFound();
+            }
+            var category = _context.Categories.Find(id);
+            //another method
+           // var category = _context.Categories.FirstORDefault(u=>u.Id==id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        //postmethod
+        [HttpPost]
+        public IActionResult DeletePOST(Category obj)
+        {
+
+             var category = _context.Categories.Find(id);
+              if (category == null)
+            {
+                return NotFound();
+            }
+            //check validation
+                _contxt.Categories.Remove(id);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
     }
 }
 
