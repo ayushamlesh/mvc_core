@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Build.FileSystem;
 using Paharamacyapi.Models;
 using Paharamacyapi.Data;
+using Order = Paharamacyapi.Models.Order;
 
 namespace Care.Controllers
 {
@@ -17,11 +18,6 @@ namespace Care.Controllers
 
 
         //2. retrive data using constructor and storing in the object & using Care.Data;
-
-        /*public CategoryController(ApplicationDbContext context)
-        {
-            _context = context;
-        }*/
         public CategoryController(PharamaAPIDbContext context)
        {
            _context = context;
@@ -32,7 +28,6 @@ namespace Care.Controllers
             //var objCatList=_context.Medecines.ToList(); 
 
             //we can use  strongly type and using Care.Models;
-            //IEnumerable<Category> objCatList = _context.Categories;
             IEnumerable<Drugs> objCatList = _context.drug;
 
             //4. we will pass the value into the view and @view reterive using foreach LOOP.
@@ -52,7 +47,6 @@ namespace Care.Controllers
         public IActionResult Create(Drugs obj)
         {
             //check data is already exists.
-            //var medicine = _context.Categories.FirstOrDefault(m => m.CatId == obj.CatId);
             var medicine = _context.drug.FirstOrDefault(m => m.Id == obj.Id);
 
             if (medicine!=null)
@@ -80,7 +74,6 @@ namespace Care.Controllers
             }
             var category = _context.drug.Find(id);
 
-            //var category = _context.Categories.Find(id);
             //another method
             // var category = _context.Categories.FirstORDefault(u=>u.Id==id);
 
@@ -152,31 +145,32 @@ namespace Care.Controllers
 
             return View(objCatList);
         }
+
         [HttpPost]
-        /*public IActionResult Order(Order model)
+        public IActionResult Order(Order model)
         {
            if (ModelState.IsValid)
             {
                 // Fetch the medicine from the database by medicine ID
-                var medicine = _context.drug.FirstOrDefault(m => m.DrugName == model.CatName)?.DrugName;
+                var medicine = _context.drug.FirstOrDefault(m => m.DrugName == model.DrugName)?.DrugName;
 
-                if (medicine == null)
+               /* if (medicine == null)
                 {
                     ModelState.AddModelError("MedicineId", "Medicine not found in the database.");
                     return View();
-                }
+                }*/
 
                 // Update the order quantity
-                int? price = (int)(_context.drug.FirstOrDefault(x => x.DrugName == model.CatName)?.Price);
+                int? price = (int)(_context.drug.FirstOrDefault(x => x.DrugName == model.DrugName)?.Price);
                 if (price != null)
                 {
-                    var order = new Order
+                    var orde = new Order
                     {
-                        CatName = model.CatName,
+                        DrugName = model.DrugName,
                         Quantity = model.Quantity,
                         Total = (int)(price * model.Quantity)
                     };
-                    _context.Orders.Add(order);
+                    _context.orders.Add(orde);
                     _context.SaveChanges();
                     return View("Index");
                 }
@@ -188,7 +182,7 @@ namespace Care.Controllers
 
             // If ModelState is invalid, return to the form with error messages
             return View(model);
-        }*/
+        }
 
 
         //searching

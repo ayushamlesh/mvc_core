@@ -21,8 +21,6 @@ namespace Paharamacyapi.Controllers
         public IActionResult Index()
         {
             //3. writing dbset name to reterive data from database
-            //var objCatList=_context.Medecines.ToList(); 
-
             //we can use  strongly type and using Care.Models;
             IEnumerable<Drugs> objCatList = dbcontext.drug;
 
@@ -32,6 +30,7 @@ namespace Paharamacyapi.Controllers
 
 
         [HttpPost]
+        [Route("api/Drugs/add")]
         public IActionResult Create(Drugs obj)
         {
             //check data is already exists.
@@ -53,7 +52,7 @@ namespace Paharamacyapi.Controllers
 
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("Search/{id}")]
         public IActionResult Search(string id)
         {
             //RETRIEVE THE CATAGORY USING ID
@@ -73,7 +72,7 @@ namespace Paharamacyapi.Controllers
         }
 
         [HttpPost]
-        [Route("{id}")]
+        [Route("Delete/{id}")]
         public IActionResult DeletePOST(string? id)
         {
 
@@ -88,15 +87,21 @@ namespace Paharamacyapi.Controllers
             dbcontext.SaveChanges();
             return Ok(id);
         }
-
-       /*  [HttpPost]
-         [Route("{id:}")]
+        [HttpPost]
+        [Route("Edit")]
         public IActionResult Edit(Drugs obj)
-          {
-                  dbcontext.drug.Update(obj);
-                  dbcontext.SaveChanges();
-                  return Ok(obj);
-          }*/
+        {
+
+
+            //check validation
+            if (ModelState.IsValid)
+            {
+                dbcontext.drug.Update(obj);
+                dbcontext.SaveChanges();
+                return Ok(obj);
+            }
+            return NotFound();
+        }
 
     }
 }
