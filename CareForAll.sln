@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Care", "Care\Care.csproj", "{A475A9DB-F864-4BD5-9C79-34E157E4171E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Care", "Care\Care.csproj", "{A475A9DB-F864-4BD5-9C79-34E157E4171E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF} = {3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "login", "login\login.csproj", "{C952DE7F-95C5-4A67-A934-D1719492BA27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paharamacyapi", "Paharamacyapi\Paharamacyapi.csproj", "{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{A475A9DB-F864-4BD5-9C79-34E157E4171E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A475A9DB-F864-4BD5-9C79-34E157E4171E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A475A9DB-F864-4BD5-9C79-34E157E4171E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C952DE7F-95C5-4A67-A934-D1719492BA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C952DE7F-95C5-4A67-A934-D1719492BA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C952DE7F-95C5-4A67-A934-D1719492BA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C952DE7F-95C5-4A67-A934-D1719492BA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3999C6A0-B86B-4AAA-AAFD-DAD8BC19D9EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

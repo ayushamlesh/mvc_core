@@ -1,0 +1,41 @@
+﻿@model Paharamacyapi.Models.Drugs
+
+
+<form method="post">
+              
+
+    @*using the below because when we are updatig the data it is showing the previous on only.*@
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Searched Medicine</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            @*using asp helper tags to use property from model 'asp-for="CatName" '*@
+            <label>Batch Id</label>
+            <input asp-for="Id" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Medicine Name</label>
+            <input asp-for="DrugName" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <lable>Quantity</lable>
+            <input asp-for="Quantity" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            @*using asp helper tags to use property from model 'asp-for="CatName" '*@
+            <label>Price</label>
+            <input asp-for="Price" disabled class="form-control" />
+
+        </div>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">
+            Back To List
+        </a>
+    </div>
+
+</form>

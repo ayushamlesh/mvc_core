@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Care.Models
 {
@@ -19,4 +20,21 @@ namespace Care.Models
         public int? Price { get; set; }
  
     }
+
+    public class Order
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string? OrderId { get; set; }
+
+        [Required(ErrorMessage = "Medicine is required.")]
+    
+        public string? CatName { get; set; }
+
+        [Required(ErrorMessage = "Quantity is required.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Quantity must be a positive integer.")]
+        public int Quantity { get; set; }
+        public int Total { get; set; }
+    }
+
 }

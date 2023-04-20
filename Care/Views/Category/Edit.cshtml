@@ -1,4 +1,4 @@
-@model Category
+@model Paharamacyapi.Models.Drugs
 
 
 <form method="post">
@@ -17,12 +17,12 @@
         <div class="mb-3">
             @*using asp helper tags to use property from model 'asp-for="CatName" '*@
             <label >Category Id</label>
-            <input asp-for="CatId" class="form-control" />
+            <input asp-for="Id" class="form-control" />
 @*            <span asp-validation-for="CatId" class="text-danger"/>
 *@        </div>
         <div class="mb-3">
             <label>Category Name</label>
-            <input asp-for="CatName" class="form-control" />
+            <input asp-for="DrugName" class="form-control" />
 @*            <span asp-validation-for="CatName" class="text-danger" />
 *@
         </div>
